@@ -1,0 +1,49 @@
+.LeaderBoard-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-one {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+  border-style: solid;
+  padding-left: 0;
+}
+
+.item-0 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.item {
+  display: flex;
+}
+
+.item:nth-of-type(odd) {
+  background-color: rgb(243, 240, 240);
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.refresh {
+  height: 40px;
+}
+
+.display {
+  flex: 1;
+}
+
+.input {
+  flex: 1;
+}
