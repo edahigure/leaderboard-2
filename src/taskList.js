@@ -60,13 +60,13 @@ export class ListTasks {
     list.appendChild(newTask);
 
     this.initEvent(i);
-  
+
     this.pushLocalStorage(this.taskListArr);
 
     newItem.value = '';
   }
 
-  pushLocalStorage(taskListArr){
+  pushLocalStorage(taskListArr) {
     const str = JSON.stringify(taskListArr);
     localStorage.setItem('taksListStorage', str);
   }
@@ -79,7 +79,7 @@ export class ListTasks {
     this.taskListArr[id].description = editLabel.value;
 
     this.pushLocalStorage(this.taskListArr);
-    
+
     document.querySelector(`#trash-${id}`).style.display = 'none';
     document.querySelector(`#edit-${id}`).style.display = 'block';
 
@@ -96,7 +96,7 @@ export class ListTasks {
     for (let i = 0; i < result.length; i += 1) {
       result[i].index = i;
     }
-    
+
     this.pushLocalStorage(result);
 
     document.querySelector('.list').innerHTML = '';
@@ -184,9 +184,7 @@ export class ListTasks {
         this.taskListArr = newArray;
         this.id = this.taskListArr.length - 1;
 
-        
         this.pushLocalStorage(this.taskListArr);
-        
 
         document.querySelector('.list').innerHTML = '';
         this.printList();
@@ -222,9 +220,7 @@ export class ListTasks {
       this.taskListArr[Number(id)].completed = false;
     }
 
-  
     this.pushLocalStorage(this.taskListArr);
-
   };
 
   inform = () => 0

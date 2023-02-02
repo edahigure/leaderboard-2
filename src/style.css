@@ -1,9 +1,9 @@
 .LeaderBoard-wrapper {
   display: flex;
   flex-direction: column;
-
 }
-.wrapper-one{
+
+.wrapper-one {
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -23,21 +23,20 @@
   gap: 20px;
 }
 
-.item{
+.item {
   display: flex;
 }
-.item:nth-of-type(odd) {
 
+.item:nth-of-type(odd) {
   background-color: rgb(243, 240, 240);
 }
-
 
 .input-section {
   display: flex;
   flex-direction: column;
 }
 
-.refresh{
+.refresh {
   height: 40px;
 }
 
