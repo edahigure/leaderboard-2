@@ -70,3 +70,5 @@ addButton.addEventListener('click', () => {
   addItem(user, score);
   form.reset();
 });
+
+getItems();
