@@ -22,10 +22,6 @@ const getItems = async () => {
   const score = [];
 
   let id = myIdValue;
- /*  const promise = myId.then((res) => {
-    id = res;
-  });
-  await promise; */
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const result = fetch(url);
