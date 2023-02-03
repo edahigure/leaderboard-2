@@ -21,7 +21,7 @@ const getItems = async () => {
   const user = [];
   const score = [];
 
-  let id = myIdValue;
+  const id = myIdValue;
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const result = fetch(url);
@@ -38,7 +38,7 @@ const getItems = async () => {
 };
 
 const addItem = async (name, score) => {
-  let id = myIdValue;
+  const id = myIdValue;
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const response = fetch(url, {
@@ -61,8 +61,7 @@ const refreshButton = document.querySelector('.refresh');
 refreshButton.addEventListener('click', () => getItems());
 
 const addButton = document.querySelector('#add-button');
-const form=document.querySelector('.input-section');
-
+const form = document.querySelector('.input-section');
 
 addButton.addEventListener('click', () => {
   const user = document.querySelector('.user').value;
@@ -70,5 +69,3 @@ addButton.addEventListener('click', () => {
   addItem(user, score);
   form.reset();
 });
-
-
