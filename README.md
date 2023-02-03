@@ -32,7 +32,7 @@ Video presenting the features the Project</a>
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](Anas Sufyan)
+- [👥 Authors](Edahi Gutiérrez)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
