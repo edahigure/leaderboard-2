@@ -20,7 +20,6 @@ const myIdValue = 'w9hmiBZACt8cHhbWgqB0';
 const getItems = async () => {
   const user = [];
   const score = [];
-
   const id = myIdValue;
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
