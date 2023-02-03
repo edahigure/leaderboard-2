@@ -15,38 +15,13 @@ const printList = (user, score) => {
   }
 };
 
-const initGame = async (name) => {
-  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
-    method: 'POST',
-    body: JSON.stringify(
-      {
-        name,
-      },
-    ),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-
-  return response.json().then((data) => {
-    const id = data.result.split(' ')[3];
-    const str = JSON.stringify(id);
-    localStorage.setItem('idGame', str);
-    return id;
-  });
-};
-
-const myId = initGame('My new cool game');
+const myIdValue = 'w9hmiBZACt8cHhbWgqB0';
 
 const getItems = async () => {
   const user = [];
   const score = [];
 
-  let id = '';
-  const promise = myId.then((res) => {
-    id = res;
-  });
-  await promise;
+  const id = myIdValue;
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const result = fetch(url);
@@ -63,11 +38,7 @@ const getItems = async () => {
 };
 
 const addItem = async (name, score) => {
-  let id = '';
-  const promise = myId.then((res) => {
-    id = res;
-  });
-  await promise;
+  const id = myIdValue;
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const response = fetch(url, {
@@ -83,7 +54,7 @@ const addItem = async (name, score) => {
     },
   });
   await response;
-  getItems();
+
   return response;
 };
 
@@ -91,9 +62,11 @@ const refreshButton = document.querySelector('.refresh');
 refreshButton.addEventListener('click', () => getItems());
 
 const addButton = document.querySelector('#add-button');
+const form = document.querySelector('.input-section');
 
 addButton.addEventListener('click', () => {
   const user = document.querySelector('.user').value;
   const score = document.querySelector('.score').value;
   addItem(user, score);
+  form.reset();
 });
