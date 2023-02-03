@@ -15,32 +15,7 @@ const printList = (user, score) => {
   }
 };
 
-/* const initGame = async (name) => {
-  const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
-    method: 'POST',
-    body: JSON.stringify(
-      {
-        name,
-      },
-    ),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  });
-
-  return response.json().then((data) => {
-    const id = data.result.split(' ')[3];
-    const str = JSON.stringify(id);
-    localStorage.setItem('idGame', str);
-    return id;
-  });
-}; */
-
-
-
-//const myId = initGame('My new cool game').then((id)=> {console.log(id)} );
 const myIdValue = 'w9hmiBZACt8cHhbWgqB0';
-
 
 const getItems = async () => {
   const user = [];
@@ -68,10 +43,6 @@ const getItems = async () => {
 
 const addItem = async (name, score) => {
   let id = myIdValue;
-/*   const promise = myId.then((res) => {
-    id = res;
-  });
-  await promise; */
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const response = fetch(url, {
@@ -87,7 +58,6 @@ const addItem = async (name, score) => {
     },
   });
   await response;
-//  getItems();
   return response;
 };
 
