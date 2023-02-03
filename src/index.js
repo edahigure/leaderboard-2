@@ -15,16 +15,13 @@ const printList = (user, score) => {
   }
 };
 
-
 const myIdValue = 'w9hmiBZACt8cHhbWgqB0';
-
 
 const getItems = async () => {
   const user = [];
   const score = [];
 
   const id = myIdValue;
-
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const result = fetch(url);
@@ -42,7 +39,6 @@ const getItems = async () => {
 
 const addItem = async (name, score) => {
   const id = myIdValue;
-
 
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${id}/scores/`;
   const response = fetch(url, {
@@ -67,7 +63,6 @@ refreshButton.addEventListener('click', () => getItems());
 
 const addButton = document.querySelector('#add-button');
 const form = document.querySelector('.input-section');
-
 
 addButton.addEventListener('click', () => {
   const user = document.querySelector('.user').value;
